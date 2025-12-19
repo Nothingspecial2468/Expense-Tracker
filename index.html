@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        <button id="theme-toggle">🌙</button>
+        <form id="expense-form">
+            <div class="form-group">
+                <label for="title">Expense Title</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="text" id="amount" name="amount" placeholder="Amount (₹): " required>
+                <label for="category">Category</label>
+                <select id="category" name="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Food">Food</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Bills">Bills</option>
+                    <option value="Travelling">Travelling</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <button type="submit" id="add-expense">Add Expense</button>
+        </form>
+        
+        <div class="filters">
+            <input type="text" id="search-bar" placeholder="Search expenses here....">
+            <!-- <button id="clear-search">✖</button> -->
+
+            <select id="month-filter">
+                <option value="all">All Months</option>
+                <option value="0">January</option>
+                <option value="1">February</option>
+                <option value="2">March</option>
+                <option value="3">April</option>
+                <option value="4">May</option>
+                <option value="5">June</option>
+                <option value="6">July</option>
+                <option value="7">August</option>
+                <option value="8">September</option>
+                <option value="9">October</option>
+                <option value="10">November</option>
+                <option value="11">December</option>
+            </select>
+        </div>
+
+        <p id="no-results" class="hidden">No matching results found!</p>
+
+        <ul id="expense-list"></ul>
+
+        <div class="total-expense">
+            Total Expense: ₹<span id="total-amount">0</span>
+        </div>
+
+        <div class="summary-section">
+            <div class="monthly-summary">
+                <h3>Monthly Summary</h3>
+                <p>This Month Total: ₹<span id="month-total">0</span></p>
+                <ul id="month-category"></ul>
+            </div>
+            <div class="category-summary">
+                <h3>Category Summary</h3>
+                <table id="category-summary-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Total Spent</th>
+                        </tr>
+                    </thead>
+                    <tbody id="category-summary-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
